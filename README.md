@@ -12,3 +12,8 @@ for use in teaching.
 6. Implement collision detection to lose the game with a game lose screen 
 7. Implement a scoring method
 8. Implement enemy car speeding up with events and timers
+
+
+## How to play this game
+1. Install the requirements
+2. `python main.py`
