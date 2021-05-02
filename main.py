@@ -3,11 +3,10 @@ import pygame
 from pygame.locals import *
 import random
 import time
-import os
 import sys
 from pathlib import Path
 
-# Initialzing
+# Initializing
 pygame.init()
 
 # Setting up FPS
@@ -33,7 +32,7 @@ score = 0
 # Setting up Fonts
 font = pygame.font.SysFont("Verdana", 60)
 font_small = pygame.font.SysFont("Verdana", 20)
-game_over = font.render("Game Over", True, BLACK)
+game_over = font.render("Game Over", True, WHITE)
 
 background = pygame.image.load(ASSETS_PATH / "AnimatedStreet.png")
 
@@ -98,7 +97,7 @@ if __name__ == "__main__":
         # Cycles through all events occurring
         for event in pygame.event.get():
             if event.type == INC_SPEED:
-                SPEED += 0.5
+                SPEED += 0.25
             if event.type == QUIT:
                 pygame.quit()
                 sys.exit()
@@ -117,7 +116,7 @@ if __name__ == "__main__":
             pygame.mixer.Sound(ASSETS_PATH / 'crash.wav').play()
             time.sleep(1)
 
-            display_surface.fill(RED)
+            display_surface.fill(BLACK)
             display_surface.blit(game_over, (30, 250))
 
             pygame.display.update()
